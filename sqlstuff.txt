@@ -39,7 +39,16 @@ constraint genero foreign key (genero_id) references genero(genero_id),
 constraint editora foreign key (editora_id) references editora(editora_id);
 )
 
-table2
+create table pedido compra(
+id_pedido int primary key,
+data_pedido varchar(10) not null,
+quantidade int not null,
+produto_id int,
+cliente_id int,
+status ENUM('pendente','aprovado','cancelado') NOT NULL
+constraint produto foreign key (produto_id) references produto(produto_id),
+constraint cliente foreign key (cliente_id) references cliente(cliente_id);
+)
 
 create function desconto(a int)
 returns decimal(3)
@@ -49,6 +58,12 @@ return (a - (a / 10));
 
 create procedure determina_valor(a int)
 begin
+if a > 1000
+begin
+set classificacao
+
+
+
 trigger1
 
 trigger2
