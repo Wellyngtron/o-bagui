@@ -1,0 +1,29 @@
+create function soma(a int, b int, c int)
+returns int
+deterministic
+begin
+return (a + b + c);
+select soma(1,2,3);
+
+create function diferenca(a int, b int)
+returns int
+deterministic
+begin
+if a > b then
+return a;
+else
+return b;
+end if;
+select diferenca(2,3);
+
+create procedure novo_cliente(id int, nome varchar(50), email varchar(100)
+begin
+insert into cliente(id, nome, email) values (id, nome, email);
+end;
+call novo_cliente(10, 'clientasso', 'emaillegal@email.email');
+
+create procedure deleta_cliente(a int)
+begin
+delete from cliente where id = a;
+end;
+call deleta_cliente(10);
