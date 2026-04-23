@@ -27,3 +27,9 @@ begin
 delete from cliente where id = a;
 end;
 call deleta_cliente(10);
+
+create function desconto(a int)
+returns decimal(3)
+deterministic
+begin
+return (a - (a / 10));
