@@ -28,7 +28,16 @@ delete from cliente where id = a;
 end;
 call deleta_cliente(10);
 
-table1
+create table livro(
+id_livro int primary key,
+titulo varchar(20) not null,
+preco decimal(2) not null,
+estoque int,
+genero_id int,
+editora_id int,
+constraint genero foreign key (genero_id) references genero(genero_id),
+constraint editora foreign key (editora_id) references editora(editora_id);
+)
 
 table2
 
