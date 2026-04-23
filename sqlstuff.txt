@@ -28,8 +28,18 @@ delete from cliente where id = a;
 end;
 call deleta_cliente(10);
 
+table1
+
+table2
+
 create function desconto(a int)
 returns decimal(3)
 deterministic
 begin
 return (a - (a / 10));
+
+create procedure determina_valor(a int)
+begin
+trigger1
+
+trigger2
